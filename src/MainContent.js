@@ -31,7 +31,10 @@ const MainContent = () => {
           toggleEmailBar={toggleEmailBar}
         />
         <MessageBar {...data[msg]} />
-        <FaPlusCircle id="contact_me" onClick={() => composeMail()} />
+        <FaPlusCircle
+          className={showEmailBar ? "contact_me" : "hide"}
+          onClick={() => composeMail()}
+        />
       </div>
     </main>
   );
