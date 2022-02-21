@@ -3,7 +3,7 @@ const data = [
     id: 0,
     from: "Ethan Wu",
     date: "12/20/2021",
-    sDate: "12/20",
+    sDate: "Mon 12/20",
     time: "1:24 pm",
     subject: "About Me",
     message:
@@ -12,8 +12,8 @@ const data = [
   {
     id: 1,
     from: "Ethan Wu",
-    date: "12/20/21",
-    sDate: "12/20",
+    date: "12/20/2021",
+    sDate: "Mon 12/20",
     time: "XX:XX pm",
     subject: "Resume",
     message:
@@ -22,8 +22,8 @@ const data = [
   {
     id: 2,
     from: "Ethan Wu",
-    date: "12/20/21",
-    sDate: "12/20",
+    date: "12/20/2021",
+    sDate: "Mon 12/20",
     time: "XX:XX pm",
     subject: "Project1",
     message:

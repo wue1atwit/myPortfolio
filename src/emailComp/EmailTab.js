@@ -1,8 +1,22 @@
 import React from "react";
 
-const EmailTab = ({ id, from, date, subject, message, selectMsg }) => {
+const EmailTab = ({
+  id,
+  from,
+  date,
+  subject,
+  message,
+  selectMsg,
+  toggleEmailBar,
+}) => {
   return (
-    <article className="esection" onClick={() => selectMsg(id)}>
+    <article
+      className="esection"
+      onClick={() => {
+        selectMsg(id);
+        toggleEmailBar();
+      }}
+    >
       <h2 className="froms">{from}</h2>
       <div className="rItems">
         <p className="date">{date}</p>

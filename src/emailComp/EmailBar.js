@@ -3,17 +3,26 @@ import EmailTab from "./EmailTab";
 import SearchBar from "./SearchBar";
 import data from "../res/emailData";
 
-const EmailBar = ({ selectMsg, showEmailBar }) => {
+const EmailBar = ({ selectMsg, showEmailBar, toggleEmailBar }) => {
   console.log(showEmailBar);
   return (
-    <div className={showEmailBar ? "email_overlay" : "email_hide"}>
-      <SearchBar />
-      <div className="email_bar">
-        <article className="emails">
-          {data.map((email) => {
-            return <EmailTab key={email.id} {...email} selectMsg={selectMsg} />;
-          })}
-        </article>
+    <div className="email_bar_overlay">
+      <div className={showEmailBar ? "email_overlay" : "email_hide"}>
+        <SearchBar />
+        <div className="email_bar">
+          <section className="emails">
+            {data.map((email) => {
+              return (
+                <EmailTab
+                  key={email.id}
+                  {...email}
+                  selectMsg={selectMsg}
+                  toggleEmailBar={toggleEmailBar}
+                />
+              );
+            })}
+          </section>
+        </div>
       </div>
     </div>
   );

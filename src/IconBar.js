@@ -9,8 +9,8 @@ import {
 
 const IconBar = ({ toggleEmailBar }) => {
   return (
-    <div className="social_bar" onClick={() => toggleEmailBar()}>
-      <FaInbox className="icons" />
+    <nav className="social_bar">
+      <FaInbox className="icons" onClick={() => toggleEmailBar()} />
       <a href="https://www.instagram.com/ethanwu13/">
         <FaInstagram className="icons" />
       </a>
@@ -21,7 +21,7 @@ const IconBar = ({ toggleEmailBar }) => {
         <FaLinkedin className="icons" />
       </a>
       <FaCog className="icons" />
-    </div>
+    </nav>
   );
 };
 

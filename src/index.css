@@ -15,6 +15,7 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .overlay {
@@ -23,6 +24,12 @@ body {
   height: 100vh;
 }
 
+.mid_overlay {
+  display: flex;
+  flex: 1 1;
+}
+
+/* IconBar */
 .social_bar {
   display: flex;
   justify-content: space-around;
@@ -31,6 +38,7 @@ body {
   background-color: #280659;
   height: 100vh;
   width: 100px;
+  flex-shrink: 0;
 }
 
 .social_bar .icons {
@@ -43,14 +51,20 @@ body {
   color: #f54952;
 }
 
+/* EmailBar */
 .email_hide {
   display: none;
+}
+
+.email_bar_overlay {
+  flex: 1 1;
 }
 
 .email_overlay {
   background-color: #422680;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .email_bar {
@@ -58,7 +72,6 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   background-color: #422680;
-  width: 25vw;
 }
 
 .email_bar::-webkit-scrollbar {
@@ -86,6 +99,7 @@ body {
 }
 
 .esection {
+  overflow-y: hidden;
   position: relative;
   height: 175px;
   border: 1px solid #280659;
@@ -94,6 +108,7 @@ body {
   color: #f1f1f1;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
@@ -123,14 +138,15 @@ body {
 
 .subject,
 .preview {
-  font-size: 16px;
+  font-size: 95%;
 }
 
+/* MessageBar */
 .message_overlay {
   position: relative;
   overflow-y: auto;
   justify-content: center;
-  display: flex;
+  display: flex; /*CHANGE BACK IF NEEDED*/
   flex: 1;
   padding: 25px;
 }
@@ -194,6 +210,7 @@ body {
 
 /* Contact Me Button */
 #contact_me {
+  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -207,21 +224,31 @@ body {
   color: #f54952;
 }
 
-@media screen and (max-width: 1400px) {
-  .email_overlay {
-    display: none;
+/* Media Queries */
+@media screen and (min-width: 1024px) {
+  .email_bar_overlay {
+    flex: 0;
+  }
+  .email_bar {
+    width: 25vw;
+  }
+  .message_overlay {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .mid_overlay {
+    position: relative;
   }
 
-  .pfp {
-    display: none;
-  }
-
-  .inbox_icon {
-    display: none;
-  }
-
-  .bars_icon {
-    display: inline-block;
+  .email_bar_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
   }
 }
 
@@ -247,12 +274,5 @@ body {
 
   .social_bar .icons {
     font-size: 24px;
-  }
-}
-
-@media screen and (max-height: 400px) {
-  .social_bar {
-    padding-top: 20px;
-    justify-content: flex-start;
   }
 }
