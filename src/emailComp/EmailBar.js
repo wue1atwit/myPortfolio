@@ -10,7 +10,7 @@ const EmailBar = ({ selectMsg, showEmailBar, toggleEmailBar }) => {
   };
   return (
     <div className="email_bar_overlay">
-      <div className={showEmailBar ? "email_overlay" : "hide"}>
+      <div className={showEmailBar ? "email_overlay" : "email_hide"}>
         <SearchBar getSearch={getSearch} />
         <div className="email_bar">
           <section className="emails">

@@ -52,6 +52,10 @@ body {
 }
 
 /* EmailBar */
+.email_hide {
+  display: none;
+}
+
 .email_bar_overlay {
   flex: 1 1;
 }
@@ -207,7 +211,7 @@ body {
 
 /* Contact Me Button */
 .contact_me {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   right: 0;
   margin: 10px 10px;
@@ -218,10 +222,6 @@ body {
 .contact_me:hover {
   cursor: pointer;
   color: #f54952;
-}
-
-.hide {
-  display: none;
 }
 
 /* Media Queries */
