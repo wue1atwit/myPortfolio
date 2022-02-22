@@ -3,7 +3,7 @@ import React from "react";
 const SearchBar = ({ getSearch }) => {
   return (
     <input
-      type="text"
+      type="search"
       name="search_bar"
       id="search_bar"
       placeholder="Search"

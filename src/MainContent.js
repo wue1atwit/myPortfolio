@@ -5,7 +5,7 @@ import MessageBar from "./msgComp/MessageBar";
 import { FaPlusCircle } from "react-icons/fa";
 import data from "./res/emailData";
 
-const MainContent = () => {
+const MainContent = ({ openModal }) => {
   const [msg, setMsg] = useState(0);
   const [showEmailBar, setShowEmailBar] = useState(true);
 
@@ -15,10 +15,6 @@ const MainContent = () => {
 
   const toggleEmailBar = () => {
     setShowEmailBar(!showEmailBar);
-  };
-
-  const composeMail = () => {
-    console.log("composed");
   };
 
   return (
@@ -31,7 +27,10 @@ const MainContent = () => {
           toggleEmailBar={toggleEmailBar}
         />
         <MessageBar {...data[msg]} />
-        <FaPlusCircle className="contact_me" onClick={() => composeMail()} />
+        <FaPlusCircle
+          className={showEmailBar ? "contact_me contact_me_hide" : "contact_me"}
+          onClick={() => openModal()}
+        />
       </div>
     </main>
   );
