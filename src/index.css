@@ -99,16 +99,17 @@ body {
 }
 
 .esection {
-  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font: 1em;
   position: relative;
-  height: 175px;
+  height: fit-content;
   border: 1px solid #280659;
   border-radius: 10px;
   background-color: #341671;
   color: #f1f1f1;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 10px;
+  padding: 1em;
   margin-bottom: 10px;
 }
 
@@ -117,28 +118,21 @@ body {
   cursor: pointer;
 }
 
-.rItems {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 10px;
+.esection p {
+  margin: 0;
 }
 
-.rItems p {
-  margin: 10px 0 0;
+.tab_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab_subheader {
+  display: flex;
+  justify-content: space-between;
 }
 
 .froms {
-  font-weight: normal;
-}
-
-.subject,
-.preview {
-  font-size: 95%;
 }
 
 /* MessageBar */
@@ -336,8 +330,6 @@ body {
   }
   .message_overlay {
     display: flex;
-  }
-  .email_hide {
   }
 }
 
