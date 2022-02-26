@@ -12,6 +12,7 @@ const EmailTab = ({
   selectMsg,
   toggleEmailBar,
 }) => {
+  const fullPreview = `${greeting} ${message}`;
   return (
     <article
       className="esection"
@@ -29,7 +30,7 @@ const EmailTab = ({
         <p className="subject">{subject}</p>
         <p className="date">{date}</p>
       </div>
-      <p className="preview">{`${greeting} ${message.substring(0, 100)}...`}</p>
+      <p className="preview">{fullPreview}</p>
     </article>
   );
 };

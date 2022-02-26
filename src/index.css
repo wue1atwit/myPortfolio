@@ -128,6 +128,12 @@ body {
   justify-content: space-between;
 }
 
+.preview {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* MessageBar */
 .message_overlay {
   position: relative;
@@ -323,6 +329,13 @@ body {
   }
   .message_overlay {
     display: flex;
+  }
+
+  .email_hide {
+    background-color: #422680;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
   }
 }
 
