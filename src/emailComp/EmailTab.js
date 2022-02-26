@@ -12,7 +12,6 @@ const EmailTab = ({
   selectMsg,
   eToggleEBar,
 }) => {
-  const fullPreview = `${greeting} ${message}`;
   return (
     <article
       className="esection"
@@ -30,7 +29,7 @@ const EmailTab = ({
         <p className="subject">{subject}</p>
         <p className="date">{date}</p>
       </div>
-      <p className="preview">{fullPreview}</p>
+      <p className="preview">{message}</p>
     </article>
   );
 };
