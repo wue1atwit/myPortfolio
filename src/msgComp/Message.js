@@ -1,6 +1,8 @@
 import React from "react";
+import MessageBlock from "./MessageBlock";
 
-const Message = ({ id, from, sDate, time, subject, greeting, message }) => {
+const Message = ({ id, from, sDate, time, subject, message }) => {
+  console.log(message.split("\n"));
   return (
     <>
       <div className="msg_header">
@@ -16,8 +18,7 @@ const Message = ({ id, from, sDate, time, subject, greeting, message }) => {
         </div>
       </div>
       <div className="msg_body">
-        <p>{greeting}</p>
-        <p>{message}</p>
+        <MessageBlock message={message} />
       </div>
     </>
   );
