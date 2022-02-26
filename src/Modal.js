@@ -47,7 +47,12 @@ const Modal = ({ openModal }) => {
             </div>
 
             <div className="send_btn">
-              <input id="form_btn" type="submit" onClick={() => submitForm()} />
+              <input
+                id="form_btn"
+                type="button"
+                value={"Send"}
+                onClick={() => submitForm()}
+              />
             </div>
           </div>
         </form>

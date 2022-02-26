@@ -4,7 +4,7 @@ import {
   FaInstagram,
   FaGithub,
   FaLinkedin,
-  FaCog,
+  // FaCog,
 } from "react-icons/fa";
 
 const IconBar = ({ toggleEmailBar }) => {

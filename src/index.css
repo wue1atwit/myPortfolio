@@ -1,14 +1,22 @@
+:root {
+  --dark_purple: #280659;
+  --mid_purple: #341671;
+  --light_purple: #422680;
+  --off_white: #f1f1f1;
+  --hot_pink: #f54952;
+}
+
 ::placeholder {
-  color: #422680;
+  color: var(--light_purple);
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #422680;
+  color: var(--light_purple);
 }
 
 ::-ms-input-placeholder {
-  color: #422680;
+  color: var(--light_purple);
 }
 
 body {
@@ -35,20 +43,20 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background-color: #280659;
+  background-color: var(--dark_purple);
   height: 100vh;
   width: 100px;
   flex-shrink: 0;
 }
 
 .social_bar .icons {
-  color: #f1f1f1;
+  color: var(--off_white);
   font-size: 48px;
 }
 
 .social_bar .icons:hover {
   cursor: pointer;
-  color: #f54952;
+  color: var(--hot_pink);
 }
 
 /* EmailBar */
@@ -61,7 +69,7 @@ body {
 }
 
 .email_overlay {
-  background-color: #422680;
+  background-color: var(--light_purple);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -71,7 +79,7 @@ body {
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background-color: #422680;
+  background-color: var(--light_purple);
 }
 
 .email_bar::-webkit-scrollbar {
@@ -81,14 +89,14 @@ body {
 #search_bar {
   display: block;
   background: url("./res/search_icon.svg") no-repeat right;
-  background-color: #f1f1f1;
+  background-color: var(--off_white);
   background-size: 32px;
   padding-left: 1em;
   margin: 20px auto;
   width: 85%;
   height: 2rem;
-  color: #422680;
-  border: 2px solid #422680;
+  color: var(--light_purple);
+  border: 2px solid var(--light_purple);
   outline: none;
 }
 
@@ -105,16 +113,16 @@ body {
   font: 1em;
   position: relative;
   height: fit-content;
-  border: 1px solid #280659;
+  border: 1px solid var(--dark_purple);
   border-radius: 10px;
-  background-color: #341671;
-  color: #f1f1f1;
+  background-color: var(--mid_purple);
+  color: var(--off_white);
   padding: 1em;
   margin-bottom: 10px;
 }
 
 .esection:hover {
-  color: #f54952;
+  color: var(--hot_pink);
   cursor: pointer;
 }
 
@@ -159,13 +167,13 @@ body {
 .msg_header {
   display: flex;
   position: relative;
-  color: #422680;
+  color: var(--light_purple);
   column-gap: 20px;
 }
 
 .pfp {
   display: inline-block;
-  background-color: #280659;
+  background-color: var(--dark_purple);
   background-image: url("./res/me.jpg");
   background-size: 200px;
   background-position: 46% 27%;
@@ -199,7 +207,7 @@ body {
 }
 
 .msg_body {
-  color: #422680;
+  color: var(--light_purple);
 }
 
 /* Contact Me Button */
@@ -208,7 +216,7 @@ body {
   bottom: 0;
   right: 0;
   margin: 10px 10px;
-  color: #422680;
+  color: var(--light_purple);
   font-size: 2.5em;
 }
 
@@ -221,7 +229,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: rgba(66, 38, 128);
+  background-color: var(--light_purple);
   position: absolute;
   z-index: 11;
   top: 0;
@@ -241,7 +249,7 @@ body {
 }
 
 .modal_x:hover {
-  color: #f54952;
+  color: var(--hot_pink);
 }
 
 .form_content {
@@ -250,7 +258,7 @@ body {
 }
 
 #contact_form {
-  border: #280659 2px solid;
+  border: var(--mid_purple) 2px solid;
   position: relative;
   display: flex;
   flex: 1 1;
@@ -275,8 +283,8 @@ body {
   text-align: center;
   width: 4em;
   color: white;
-  background-color: #341671;
-  border: #280659 2px solid;
+  background-color: var(--mid_purple);
+  border: var(--dark_purple) 2px solid;
   padding: 20px;
 }
 
@@ -317,7 +325,7 @@ body {
   }
 
   #contact_form {
-    background-color: #422680;
+    background-color: var(--light_purple);
     height: 75vh;
   }
 
@@ -332,7 +340,7 @@ body {
   }
 
   .email_hide {
-    background-color: #422680;
+    background-color: var(--light_purple);
     display: flex;
     flex-direction: column;
     height: 100vh;
