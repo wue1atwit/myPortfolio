@@ -84,7 +84,7 @@ body {
   background-color: #f1f1f1;
   background-size: 32px;
   padding-left: 1em;
-  margin: 20px auto 10px auto;
+  margin: 20px auto;
   width: 85%;
   height: 2rem;
   color: #422680;
@@ -122,17 +122,10 @@ body {
   margin: 0;
 }
 
-.tab_header {
-  display: flex;
-  justify-content: space-between;
-}
-
+.tab_header,
 .tab_subheader {
   display: flex;
   justify-content: space-between;
-}
-
-.froms {
 }
 
 /* MessageBar */
