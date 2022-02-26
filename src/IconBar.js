@@ -32,7 +32,7 @@ const IconBar = ({ toggleEmailBar }) => {
       >
         <FaInstagram className="icons" />
       </a>
-      <FaCog className="icons" />
+      {/* <FaCog className="icons" /> */}
     </nav>
   );
 };
