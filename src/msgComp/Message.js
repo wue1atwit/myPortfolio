@@ -2,7 +2,6 @@ import React from "react";
 import MessageBlock from "./MessageBlock";
 
 const Message = ({ id, from, sDate, time, subject, message }) => {
-  console.log(message.split("\n"));
   return (
     <>
       <div className="msg_header">
