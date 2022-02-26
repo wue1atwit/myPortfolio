@@ -257,6 +257,7 @@ body {
 }
 
 #contact_form {
+  border: #280659 2px solid;
   position: relative;
   display: flex;
   flex: 1 1;
@@ -279,7 +280,7 @@ body {
 
 .input_overlay label {
   text-align: center;
-  width: 3em;
+  width: 4em;
   color: white;
   background-color: #341671;
   border: #280659 2px solid;
@@ -335,6 +336,8 @@ body {
   }
   .message_overlay {
     display: flex;
+  }
+  .email_hide {
   }
 }
 

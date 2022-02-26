@@ -1,7 +1,13 @@
 import React from "react";
 
 const Modal = ({ openModal }) => {
+  const submitForm = () => {
+    const eSubject = document.getElementById("form_subject").value;
+    const eMsg = document.getElementById("form_message").value;
+    window.open(`mailto:wue13@outlook.com?subject=${eSubject}&body=${eMsg}`);
+  };
   return (
+    // https://medium.com/swlh/create-an-enquiry-form-in-react-and-send-email-using-nodejs-1c0cd590dce1
     <div className="modal_overlay">
       <div className="form_content">
         <form id="contact_form" action="">
@@ -15,6 +21,7 @@ const Modal = ({ openModal }) => {
                 id="form_from"
                 type="email"
                 placeholder="johndoe@email.com"
+                required
               />
             </div>
             <div>
@@ -32,14 +39,15 @@ const Modal = ({ openModal }) => {
                 id="form_subject"
                 type="text"
                 placeholder="Add a subject"
+                required
               />
             </div>
             <div className="form_message_overlay">
-              <textarea id="form_message" type="text" />
+              <textarea id="form_message" type="text" required />
             </div>
 
             <div className="send_btn">
-              <input id="form_btn" type="submit" />
+              <input id="form_btn" type="submit" onClick={() => submitForm()} />
             </div>
           </div>
         </form>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Message = ({ id, from, sDate, time, subject, message }) => {
+const Message = ({ id, from, sDate, time, subject, greeting, message }) => {
   return (
     <>
       <div className="msg_header">
@@ -16,6 +16,7 @@ const Message = ({ id, from, sDate, time, subject, message }) => {
         </div>
       </div>
       <div className="msg_body">
+        <p>{greeting}</p>
         <p>{message}</p>
       </div>
     </>

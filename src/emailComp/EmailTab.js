@@ -5,6 +5,7 @@ const EmailTab = ({
   from,
   date,
   subject,
+  greeting,
   message,
   selectMsg,
   toggleEmailBar,
@@ -22,7 +23,7 @@ const EmailTab = ({
         <p className="date">{date}</p>
       </div>
       <p className="subject">{subject}</p>
-      <p className="preview">{message.substring(0, 100)}</p>
+      <p className="preview">{`${greeting} ${message.substring(0, 100)}...`}</p>
     </article>
   );
 };
