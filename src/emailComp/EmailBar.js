@@ -3,7 +3,7 @@ import EmailTab from "./EmailTab";
 import SearchBar from "./SearchBar";
 import data from "../res/emailData";
 
-const EmailBar = ({ selectMsg, showEmailBar, toggleEmailBar }) => {
+const EmailBar = ({ selectMsg, showEmailBar, toggleEmailBar, eToggleEBar }) => {
   const [search, setSearch] = useState("");
   const getSearch = (term) => {
     setSearch(term);
@@ -31,7 +31,7 @@ const EmailBar = ({ selectMsg, showEmailBar, toggleEmailBar }) => {
                     key={email.id}
                     {...email}
                     selectMsg={selectMsg}
-                    toggleEmailBar={toggleEmailBar}
+                    eToggleEBar={eToggleEBar}
                   />
                 );
               })}

@@ -210,6 +210,10 @@ body {
   color: var(--light_purple);
 }
 
+.msg_body p {
+  margin: 0;
+}
+
 /* Contact Me Button */
 .contact_me {
   position: absolute;
@@ -337,13 +341,6 @@ body {
   }
   .message_overlay {
     display: flex;
-  }
-
-  .email_hide {
-    background-color: var(--light_purple);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
   }
 }
 

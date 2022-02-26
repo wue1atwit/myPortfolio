@@ -10,7 +10,7 @@ const EmailTab = ({
   greeting,
   message,
   selectMsg,
-  toggleEmailBar,
+  eToggleEBar,
 }) => {
   const fullPreview = `${greeting} ${message}`;
   return (
@@ -18,7 +18,7 @@ const EmailTab = ({
       className="esection"
       onClick={() => {
         selectMsg(id);
-        toggleEmailBar();
+        eToggleEBar();
       }}
     >
       <div className="tab_header">

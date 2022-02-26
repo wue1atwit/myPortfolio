@@ -5,7 +5,12 @@ const MessageBlock = ({ message }) => {
   return (
     <>
       {msgArray.map((msg) => {
-        return <p>{msg}</p>;
+        return (
+          <>
+            <p>{msg}</p>
+            <br />
+          </>
+        );
       })}
     </>
   );
