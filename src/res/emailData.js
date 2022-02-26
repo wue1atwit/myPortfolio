@@ -6,7 +6,7 @@ const data = [
     sDate: "Mon 12/20",
     time: "1:24 pm",
     subject: "About Me",
-    greeting: "To whom it may concern,",
+    greeting: "Hello,",
     message:
       "I am Ethan Wu, a Sophomore studying in Computer Science at Wentworth Institute of Technology.",
   },
