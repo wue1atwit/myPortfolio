@@ -1,17 +1,17 @@
 import React from "react";
 import { FaPaperclip } from "react-icons/fa";
 
-const EmailTab = ({
-  id,
-  from,
-  date,
-  subject,
-  hasAttachment,
-  greeting,
-  message,
-  selectMsg,
-  eToggleEBar,
-}) => {
+const EmailTab = (props) => {
+  const {
+    id,
+    from,
+    date,
+    subject,
+    hasAttachment,
+    message,
+    selectMsg,
+    eToggleEBar,
+  } = props;
   return (
     <article
       className="esection"
