@@ -1,7 +1,15 @@
 import React from "react";
 import MessageBlock from "./MessageBlock";
 
-const Message = ({ id, from, sDate, time, subject, message }) => {
+const Message = ({
+  id,
+  from,
+  sDate,
+  time,
+  subject,
+  message,
+  hasAttachment,
+}) => {
   return (
     <>
       <div className="msg_header">
@@ -16,6 +24,7 @@ const Message = ({ id, from, sDate, time, subject, message }) => {
           <p>{time}</p>
         </div>
       </div>
+      {hasAttachment && <div className="attachments_bar">File Here</div>}
       <div className="msg_body">
         <MessageBlock message={message} />
       </div>
