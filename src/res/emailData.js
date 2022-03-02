@@ -8,7 +8,7 @@ const data = [
     subject: "About Me",
     hasAttachment: false,
     message:
-      "Welcome to my web portfolio, \nMy name is Ethan and I am Sophomore studying Computer Science at Wentworth Institute of Technology. My interest in coding stemmed from when I was younger, when I attempted to create a Minecraft mod using Java. Although I was not successful, I was able to quickly pickup on the process of coding and the beneficial coding syntaxes. \nAs I reached high school, I was enrolled in my school's robotic program, where I was able to program how a robot and a vending machine functioned. This experience piqued my interest in programming because of how exhilarating it was to see my program function outside the scope of just code. I strive to continue making programs that displays my creativity and passion in what I learn. \n\nBest,\nEthan Wu",
+      "Welcome to my web portfolio, \nMy name is Ethan and I am Sophomore studying Computer Science at Wentworth Institute of Technology. My interest in coding stemmed from when I was in middle school, when I attempted to create a Minecraft mod using Java. Although I was not successful, I was able to quickly pickup on the process of coding and the beneficial coding syntaxes. \nAs I reached high school, I was enrolled in my school's robotic program, where I was able to program how a robot and a vending machine functioned. This experience piqued my interest in programming because of how exhilarating it was to see my program function outside the scope of just code. I strive to continue making programs that displays my creativity and passion in what I learn. \n\nBest,\nEthan Wu",
   },
   {
     id: 1,
