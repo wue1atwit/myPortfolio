@@ -8,6 +8,7 @@ const Message = ({
   time,
   subject,
   message,
+  attachedFiles,
   hasAttachment,
 }) => {
   return (
@@ -24,7 +25,13 @@ const Message = ({
           <p>{time}</p>
         </div>
       </div>
-      {hasAttachment && <div className="attachments_bar">File Here</div>}
+      {hasAttachment && (
+        <div className="attachments_bar">
+          <a href={attachedFiles} download>
+            Download
+          </a>
+        </div>
+      )}
       <div className="msg_body">
         <MessageBlock message={message} />
       </div>
