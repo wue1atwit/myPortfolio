@@ -21,12 +21,12 @@ const EmailTab = (props) => {
       }}
     >
       <div className="tab_header">
-        <p className="froms">{from}</p>
+        <h1 className="froms">{from}</h1>
         <div className="th_icons">{hasAttachment && <FaPaperclip />}</div>
       </div>
 
       <div className="tab_subheader">
-        <p className="subject">{subject}</p>
+        <h4 className="subject">{subject}</h4>
         <p className="date">{date}</p>
       </div>
       <p className="preview">{message}</p>

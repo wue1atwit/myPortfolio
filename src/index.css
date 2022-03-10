@@ -136,6 +136,17 @@ body {
   justify-content: space-between;
 }
 
+.froms {
+  margin: 0;
+  font-size: 1em;
+  font-weight: inherit;
+}
+
+.subject {
+  margin: 0;
+  font-weight: inherit;
+}
+
 .preview {
   white-space: nowrap;
   overflow: hidden;
@@ -195,6 +206,7 @@ body {
 
 .msg_info .name {
   font-size: 2em;
+  font-weight: inherit;
 }
 
 .msg_date {
@@ -316,6 +328,53 @@ body {
   justify-content: center;
 }
 
+.attachments_bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.file_overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: solid black 1px;
+  border-radius: 0.25em;
+}
+
+.files {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--mid_purple);
+  text-decoration: none;
+  border-radius: 0.25em 0em 0em 0.25em;
+  padding: 1em;
+
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.afile_icon {
+  font-size: 1.5em;
+}
+
+.down_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+  color: var(--mid_purple);
+  height: 100%;
+}
+
+.files:hover,
+.down_menu:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
 /* Media Queries */
 @media screen and (min-width: 1024px) {
   .modal_overlay {
@@ -341,6 +400,9 @@ body {
   }
   .message_overlay {
     display: flex;
+  }
+  .attachments_bar {
+    flex-direction: row;
   }
 }
 

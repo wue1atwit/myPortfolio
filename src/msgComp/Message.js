@@ -1,5 +1,6 @@
 import React from "react";
 import MessageBlock from "./MessageBlock";
+import File from "./File";
 
 const Message = ({
   id,
@@ -16,7 +17,7 @@ const Message = ({
       <div className="msg_header">
         <div className="pfp"></div>
         <div className="msg_info">
-          <p className="name">{from}</p>
+          <h1 className="name">{from}</h1>
           <p className="more">To: You</p>
           <p className="more">Subject: {subject}</p>
         </div>
@@ -27,9 +28,9 @@ const Message = ({
       </div>
       {hasAttachment && (
         <div className="attachments_bar">
-          <a href={attachedFiles} download>
-            Download
-          </a>
+          {attachedFiles.map((file, index) => {
+            return <File key={index} file={file}></File>;
+          })}
         </div>
       )}
       <div className="msg_body">

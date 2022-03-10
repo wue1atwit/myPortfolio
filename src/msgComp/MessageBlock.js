@@ -4,12 +4,12 @@ const MessageBlock = ({ message }) => {
   const msgArray = message.split("\n");
   return (
     <>
-      {msgArray.map((msg) => {
+      {msgArray.map((msg, index) => {
         return (
-          <>
+          <div key={index}>
             <p>{msg}</p>
             <br />
-          </>
+          </div>
         );
       })}
     </>

@@ -4,7 +4,7 @@ const data = [
   {
     id: 0,
     from: "Ethan Wu",
-    date: "2/26/2021",
+    date: "2/26/2022",
     sDate: "Sat 2/26",
     time: "11:24 pm",
     subject: "About Me",
@@ -20,7 +20,11 @@ const data = [
     time: "5:44 pm",
     subject: "Resume",
     hasAttachment: true,
-    attachedFiles: resume,
+    attachedFiles: [
+      { name: "Ethan Wu's Resume", file: resume, type: "pdf" },
+      { name: "Ethan Wu's Resume", file: resume, type: "img" },
+      { name: "Ethan Wu's Resume", file: resume, type: "img" },
+    ],
     message:
       'Hello, \nAttached in this email is my resume. Feel free to download and view my resume as you please. Do not hesistate to contact me if you have any questions. You can contact me via the "plus/compose" button on the bottom right.  \n\nSincerely, \nEthan Wu',
   },
