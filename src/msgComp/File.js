@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { VscFilePdf, VscFileSymlinkFile } from "react-icons/vsc";
 import { FaRegFileImage } from "react-icons/fa";
 
 const File = ({ file, showEmailBar }) => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const dropMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
   return (
     <div className="aoverlay">
       <div
@@ -31,15 +25,6 @@ const File = ({ file, showEmailBar }) => {
             {file.name}
           </div>
         </a>
-        {/* <span className="down_menu" onClick={() => dropMenu()}>
-          <FaChevronDown />
-          <div
-            className={showMenu ? "amore_menu" : "amore_menu amore_menu_hide"}
-          >
-            <div className="aitems">Preview</div>
-            <div className="aitems">Download</div>
-          </div>
-        </span> */}
       </div>
     </div>
   );
