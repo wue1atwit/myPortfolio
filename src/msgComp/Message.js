@@ -3,6 +3,7 @@ import MessageBlock from "./MessageBlock";
 import File from "./File";
 
 const Message = ({
+  showEmailBar,
   id,
   from,
   sDate,
@@ -29,7 +30,9 @@ const Message = ({
       {hasAttachment && (
         <div className="attachments_bar">
           {attachedFiles.map((file, index) => {
-            return <File key={index} file={file}></File>;
+            return (
+              <File key={index} file={file} showEmailBar={showEmailBar}></File>
+            );
           })}
         </div>
       )}

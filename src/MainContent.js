@@ -49,7 +49,7 @@ const MainContent = ({ openModal }) => {
           toggleEmailBar={toggleEmailBar}
           eToggleEBar={eToggleEBar}
         />
-        <MessageBar {...data[msg]} />
+        <MessageBar {...data[msg]} showEmailBar={showEmailBar} />
         <FaPlusCircle
           className={showEmailBar ? "contact_me contact_me_hide" : "contact_me"}
           onClick={() => openModal()}

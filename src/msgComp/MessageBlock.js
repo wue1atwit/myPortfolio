@@ -8,7 +8,7 @@ const MessageBlock = ({ message }) => {
         return (
           <div key={index}>
             <p>{msg}</p>
-            <br />
+            {index < msgArray.length - 2 && <br />}
           </div>
         );
       })}

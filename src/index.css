@@ -116,7 +116,7 @@ body {
   border: 1px solid var(--dark_purple);
   border-radius: 10px;
   background-color: var(--mid_purple);
-  color: var(--off_white);
+  color: white;
   padding: 1em;
   margin-bottom: 10px;
 }
@@ -145,6 +145,10 @@ body {
 .subject {
   margin: 0;
   font-weight: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 1em;
 }
 
 .preview {
@@ -161,6 +165,11 @@ body {
   display: flex; /*CHANGE BACK IF NEEDED*/
   flex: 1;
   padding: 25px;
+  z-index: 10;
+}
+
+.message_overlay_hide {
+  z-index: 8;
 }
 
 .message {
@@ -172,7 +181,7 @@ body {
   border-radius: 20px;
   padding: 20px;
   width: 80%;
-  height: 500px;
+  height: fit-content;
 }
 
 .msg_header {
@@ -328,29 +337,43 @@ body {
   justify-content: center;
 }
 
+/* Attachment Bar */
 .attachments_bar {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  align-items: center;
 }
 
+/* Single Attachment */
 .file_overlay {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: solid black 1px;
+  outline: solid var(--dark_purple) 1px;
   border-radius: 0.25em;
+  margin: 0.5em 0.5em 0.1em 0.5em;
+  z-index: 10;
+  width: fit-content;
+}
+
+.file_overlay a {
+  text-decoration: none;
+}
+
+.file_overlay_hide {
+  z-index: 8;
 }
 
 .files {
+  color: white;
+  background-color: var(--light_purple);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5em;
-  color: var(--mid_purple);
-  text-decoration: none;
   border-radius: 0.25em 0em 0em 0.25em;
-  padding: 1em;
+  padding: 0.5em;
 
   white-space: nowrap;
   overflow: hidden;
@@ -360,8 +383,16 @@ body {
   font-size: 1.5em;
 }
 
-.down_menu {
+.files:hover,
+.down_menu:hover {
+  color: var(--off_white);
+  background-color: var(--dark_purple);
+  cursor: pointer;
+}
+
+/* .down_menu {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   padding: 0 1em;
@@ -369,12 +400,32 @@ body {
   height: 100%;
 }
 
-.files:hover,
-.down_menu:hover {
-  background-color: gray;
-  cursor: pointer;
+.aoverlay {
+  display: flex;
+  flex-direction: column;
 }
 
+.amore_menu {
+  display: block;
+  position: absolute;
+  border: solid black 1px;
+  top: 100%;
+  right: 0;
+}
+.amore_menu_hide {
+  display: none;
+}
+
+.aitems {
+  color: white;
+  background-color: var(--light_purple);
+  padding: 0.5em;
+}
+
+.aitems:hover {
+  background-color: var(--mid_purple);
+  cursor: pointer;
+} */
 /* Media Queries */
 @media screen and (min-width: 1024px) {
   .modal_overlay {
@@ -399,6 +450,12 @@ body {
     width: 25vw;
   }
   .message_overlay {
+    display: flex;
+  }
+  .files {
+    padding: 0.5em;
+  }
+  .down_menu {
     display: flex;
   }
   .attachments_bar {
