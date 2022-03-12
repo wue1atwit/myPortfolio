@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { FaPaperclip } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import EBarContext from "../EBarContext";
 
 const EmailTab = (props) => {
-  const { id, from, date, subject, hasAttachment, message, selectMsg } = props;
+  const { from, date, subject, hasAttachment, message } = props;
   const { eToggleEBar } = useContext(EBarContext);
   return (
     <article

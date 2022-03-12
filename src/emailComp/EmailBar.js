@@ -5,7 +5,7 @@ import data from "../res/emailData";
 import EBarContext from "../EBarContext";
 import { Link } from "react-router-dom";
 
-const EmailBar = ({ selectMsg }) => {
+const EmailBar = () => {
   const { showEmailBar } = useContext(EBarContext);
   const [search, setSearch] = useState("");
   const getSearch = (term) => {
@@ -31,7 +31,7 @@ const EmailBar = ({ selectMsg }) => {
               .map((email) => {
                 return (
                   <Link to={`email/${email.id}`} key={email.id}>
-                    <EmailTab {...email} selectMsg={selectMsg} />
+                    <EmailTab {...email} />
                   </Link>
                 );
               })}

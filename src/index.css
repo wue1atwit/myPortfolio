@@ -106,6 +106,10 @@ body {
   width: 85%;
 }
 
+.emails a {
+  text-decoration: none;
+}
+
 .esection {
   display: flex;
   flex-direction: column;

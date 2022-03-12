@@ -23,6 +23,7 @@ const App = () => {
             </>
           }
         ></Route>
+        <Route path="*" element={<Error404 />}></Route>
       </Routes>
     </Router>
   );

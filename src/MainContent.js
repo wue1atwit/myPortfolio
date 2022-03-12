@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import EmailBar from "./emailComp/EmailBar";
 import IconBar from "./IconBar";
 import MessageBar from "./msgComp/MessageBar";
@@ -8,13 +8,8 @@ import EBarContext from "./EBarContext";
 import { Routes, Route } from "react-router-dom";
 
 const MainContent = ({ openModal }) => {
-  const [msg, setMsg] = useState(0);
   const [showEmailBar, setShowEmailBar] = useState(true);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
-
-  const selectMsg = (id) => {
-    setMsg(id);
-  };
 
   const toggleEmailBar = () => {
     setShowEmailBar(!showEmailBar);
@@ -46,7 +41,7 @@ const MainContent = ({ openModal }) => {
       <main className="overlay">
         <IconBar />
         <div className="mid_overlay">
-          <EmailBar selectMsg={selectMsg} />
+          <EmailBar />
           <Routes>
             <Route
               path="email/:id"
