@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainContent from "./MainContent";
 import Modal from "./Modal";
+import Error404 from "./Error404";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
@@ -10,10 +12,19 @@ const App = () => {
   };
 
   return (
-    <>
-      <MainContent openModal={openModal} />
-      {showModal && <Modal openModal={openModal} />}
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path="/*"
+          element={
+            <>
+              <MainContent openModal={openModal} />
+              {showModal && <Modal openModal={openModal} />}
+            </>
+          }
+        ></Route>
+      </Routes>
+    </Router>
   );
 };
 
