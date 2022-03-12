@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import Message from "./Message";
 import EBarContext from "../EBarContext";
 
-const MessageBar = (props) => {
+const MessageBar = ({ data }) => {
   const { showEmailBar } = useContext(EBarContext);
+  const { id } = useParams();
+
   return (
     <section
       className={
@@ -13,7 +16,7 @@ const MessageBar = (props) => {
       }
     >
       <article className="message">
-        <Message {...props} />
+        <Message {...data[id]} />
       </article>
     </section>
   );

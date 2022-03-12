@@ -5,6 +5,7 @@ import MessageBar from "./msgComp/MessageBar";
 import { FaPlusCircle } from "react-icons/fa";
 import data from "./res/emailData";
 import EBarContext from "./EBarContext";
+import { Routes, Route } from "react-router-dom";
 
 const MainContent = ({ openModal }) => {
   const [msg, setMsg] = useState(0);
@@ -46,7 +47,12 @@ const MainContent = ({ openModal }) => {
         <IconBar />
         <div className="mid_overlay">
           <EmailBar selectMsg={selectMsg} />
-          <MessageBar {...data[msg]} />
+          <Routes>
+            <Route
+              path="email/:id"
+              element={<MessageBar data={data} />}
+            ></Route>
+          </Routes>
           <FaPlusCircle
             className={
               showEmailBar ? "contact_me contact_me_hide" : "contact_me"

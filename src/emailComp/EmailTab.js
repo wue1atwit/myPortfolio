@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { FaPaperclip } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import EBarContext from "../EBarContext";
 
 const EmailTab = (props) => {
@@ -9,7 +10,6 @@ const EmailTab = (props) => {
     <article
       className="esection"
       onClick={() => {
-        selectMsg(id);
         eToggleEBar();
       }}
     >
