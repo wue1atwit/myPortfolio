@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import EBarContext from "./EBarContext";
 import {
   FaInbox,
   FaInstagram,
@@ -7,7 +8,8 @@ import {
   // FaCog,
 } from "react-icons/fa";
 
-const IconBar = ({ toggleEmailBar }) => {
+const IconBar = () => {
+  const { toggleEmailBar } = useContext(EBarContext);
   return (
     <nav className="social_bar">
       <FaInbox className="icons" onClick={() => toggleEmailBar()} />

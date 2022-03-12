@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Message from "./Message";
+import EBarContext from "../EBarContext";
 
 const MessageBar = (props) => {
+  const { showEmailBar } = useContext(EBarContext);
   return (
     <section
       className={
-        props.showEmailBar
+        showEmailBar
           ? "message_overlay message_overlay_hide"
           : "message_overlay"
       }

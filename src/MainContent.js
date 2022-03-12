@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import EmailBar from "./emailComp/EmailBar";
 import IconBar from "./IconBar";
 import MessageBar from "./msgComp/MessageBar";
 import { FaPlusCircle } from "react-icons/fa";
 import data from "./res/emailData";
+import EBarContext from "./EBarContext";
 
 const MainContent = ({ openModal }) => {
   const [msg, setMsg] = useState(0);
@@ -40,22 +41,21 @@ const MainContent = ({ openModal }) => {
   });
 
   return (
-    <main className="overlay">
-      <IconBar toggleEmailBar={toggleEmailBar} />
-      <div className="mid_overlay">
-        <EmailBar
-          selectMsg={selectMsg}
-          showEmailBar={showEmailBar}
-          toggleEmailBar={toggleEmailBar}
-          eToggleEBar={eToggleEBar}
-        />
-        <MessageBar {...data[msg]} showEmailBar={showEmailBar} />
-        <FaPlusCircle
-          className={showEmailBar ? "contact_me contact_me_hide" : "contact_me"}
-          onClick={() => openModal()}
-        />
-      </div>
-    </main>
+    <EBarContext.Provider value={{ showEmailBar, toggleEmailBar, eToggleEBar }}>
+      <main className="overlay">
+        <IconBar />
+        <div className="mid_overlay">
+          <EmailBar selectMsg={selectMsg} />
+          <MessageBar {...data[msg]} />
+          <FaPlusCircle
+            className={
+              showEmailBar ? "contact_me contact_me_hide" : "contact_me"
+            }
+            onClick={() => openModal()}
+          />
+        </div>
+      </main>
+    </EBarContext.Provider>
   );
 };
 

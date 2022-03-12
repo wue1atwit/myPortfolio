@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import MessageBlock from "./MessageBlock";
 import File from "./File";
+import EBarContext from "../EBarContext";
 
 const Message = ({
-  showEmailBar,
   id,
   from,
   sDate,
@@ -13,6 +13,7 @@ const Message = ({
   attachedFiles,
   hasAttachment,
 }) => {
+  const { showEmailBar } = useContext(EBarContext);
   return (
     <>
       <div className="msg_header">

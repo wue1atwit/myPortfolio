@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import EmailTab from "./EmailTab";
 import SearchBar from "./SearchBar";
 import data from "../res/emailData";
+import EBarContext from "../EBarContext";
 
-const EmailBar = ({ selectMsg, showEmailBar, toggleEmailBar, eToggleEBar }) => {
+const EmailBar = ({ selectMsg }) => {
+  const { showEmailBar } = useContext(EBarContext);
   const [search, setSearch] = useState("");
   const getSearch = (term) => {
     setSearch(term);
@@ -27,12 +29,7 @@ const EmailBar = ({ selectMsg, showEmailBar, toggleEmailBar, eToggleEBar }) => {
               })
               .map((email) => {
                 return (
-                  <EmailTab
-                    key={email.id}
-                    {...email}
-                    selectMsg={selectMsg}
-                    eToggleEBar={eToggleEBar}
-                  />
+                  <EmailTab key={email.id} {...email} selectMsg={selectMsg} />
                 );
               })}
           </section>
