@@ -240,6 +240,22 @@ body {
   margin: 0;
 }
 
+/* No Email Placeholder */
+.no_email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  color: var(--light_purple);
+  opacity: 80%;
+}
+
+.lantern {
+  font-size: 100px;
+}
+
 /* Contact Me Button */
 .contact_me {
   position: absolute;

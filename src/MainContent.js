@@ -3,6 +3,7 @@ import EmailBar from "./emailComp/EmailBar";
 import IconBar from "./IconBar";
 import MessageBar from "./msgComp/MessageBar";
 import { FaPlusCircle } from "react-icons/fa";
+import { GiAsianLantern } from "react-icons/gi";
 import data from "./res/emailData";
 import EBarContext from "./EBarContext";
 import { Routes, Route } from "react-router-dom";
@@ -43,6 +44,15 @@ const MainContent = ({ openModal }) => {
         <div className="mid_overlay">
           <EmailBar />
           <Routes>
+            <Route
+              path="/*"
+              element={
+                <div className="no_email">
+                  <GiAsianLantern className="lantern" />
+                  <h4 className="lantern_text">Select an item to read</h4>
+                </div>
+              }
+            ></Route>
             <Route
               path="email/:id"
               element={<MessageBar data={data} />}
