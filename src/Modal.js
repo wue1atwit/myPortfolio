@@ -24,7 +24,7 @@ const Modal = ({ openModal }) => {
                 required
               />
             </div>
-            <div>
+            {/* <div>
               <label htmlFor="form_cc">CC:</label>
               <input
                 id="form_cc"
@@ -32,7 +32,7 @@ const Modal = ({ openModal }) => {
                 value="noreply@email.com"
                 readOnly
               />
-            </div>
+            </div> */}
             <div>
               <label htmlFor="form_subject">Subject:</label>
               <input
