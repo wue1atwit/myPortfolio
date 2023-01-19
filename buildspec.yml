@@ -12,8 +12,8 @@ phases:
   # post_build:
   #   commands:
 
-  artifacts:
-    files:
-      - "**/*"
-    discard-path: no
-    base-directory: build
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: build
