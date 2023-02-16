@@ -40,7 +40,6 @@ const MainContent = ({ openModal }) => {
   return (
     <EBarContext.Provider value={{ showEmailBar, toggleEmailBar, eToggleEBar }}>
       <main className="overlay">
-        <IconBar />
         <div className="mid_overlay">
           <EmailBar />
           <Routes>
