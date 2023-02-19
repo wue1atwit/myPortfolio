@@ -1,0 +1,41 @@
+@use "../index.scss" as root;
+
+.email-item {
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 300px;
+  height: 100px;
+  padding: 16px;
+  margin: -1px 0 0 -1px;
+
+  border-top: 1px solid #1a2234;
+  border-bottom: 1px solid #1a2234;
+}
+
+.email-item .icon {
+  color: root.$secondary;
+}
+
+.item-text {
+  color: root.$secondary;
+  font-size: 12px;
+  margin: 0;
+}
+
+.placeholder-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c0c0c0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.E {
+  color: #ffffff;
+  font-size: 24px;
+}

@@ -1,0 +1,17 @@
+$primary: #2e3a59;
+$secondary: #f5f5f5;
+$accent: #f7a072;
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+// @import "~bootstrap/scss/bootstrap";

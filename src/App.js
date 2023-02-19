@@ -1,31 +1,34 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainContent from "./MainContent";
-import Modal from "./Modal";
-import Error404 from "./Error404";
+import React from "react";
+import "./App.scss";
+import { FaSearch, FaPencilAlt } from "react-icons/fa";
+import EmailListItem from "./components/EmailListItem";
 
 const App = () => {
-  const [showModal, setShowModal] = useState(false);
-
-  const openModal = () => {
-    setShowModal(!showModal);
-  };
-
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/*"
-          element={
-            <>
-              <MainContent openModal={openModal} />
-              {showModal && <Modal openModal={openModal} />}
-            </>
-          }
-        ></Route>
-        <Route path="*" element={<Error404 />}></Route>
-      </Routes>
-    </Router>
+    <>
+      <div className="email-container">
+        <form className="search-container">
+          <div style={{ position: "relative" }}>
+            <input type="text" className="search" placeholder="Search" />
+            <FaSearch className="search-icon"></FaSearch>
+          </div>
+        </form>
+        <EmailListItem
+          subject="[Subject]"
+          preview="[Preview]"
+          date="11/13"
+        ></EmailListItem>
+        <EmailListItem
+          subject="[Subject]"
+          preview="[Preview]"
+          date="11/13"
+        ></EmailListItem>
+        <button className="compose-btn" onClick={() => console.log("Compose")}>
+          <FaPencilAlt></FaPencilAlt>
+          <p style={{ fontWeight: 700 }}>Compose</p>
+        </button>
+      </div>
+    </>
   );
 };
 
