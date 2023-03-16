@@ -1,0 +1,113 @@
+@use "../index.scss" as root;
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  background-color: root.$white;
+
+  max-width: 724px;
+  // height: 595px;
+  border-radius: root.$default-radius;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.subject {
+  color: root.$primary;
+
+  margin: 24px 8px 0px;
+  font-weight: 700;
+  // min-height: 96px;
+  // overflow: hidden;
+  // white-space: nowrap;
+  // text-overflow: ellipsis;
+}
+
+.message-header {
+  margin: 11px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sender > p {
+  color: root.$primary;
+  margin: 0;
+}
+
+.email {
+  font-size: 12px;
+}
+
+.email span {
+  color: root.$accent;
+}
+
+.line {
+  display: block;
+  color: root.$secondary;
+  border: 2px solid root.$secondary;
+}
+
+.message-body {
+  color: root.$primary;
+
+  flex: 2;
+  // overflow-y: scroll;
+  padding: 0 16px;
+  margin: 16px 0;
+}
+
+.attachment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  // height: 72px;
+  margin: 0 0 16px 60px;
+}
+
+.attachment-container .item-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-right: 16px;
+}
+
+.attachment-header {
+  color: root.$primary;
+
+  display: flex;
+  align-items: center;
+}
+
+.attachment-header p {
+  display: inline;
+  font-size: 12px;
+  margin: 0 0 0 6px;
+}
+
+.attachment-header p span {
+  color: root.$accent;
+  font-size: 12px;
+  margin: 0 8px 0 6px;
+}
+
+.attachment-header .line {
+  flex: 2;
+  border: 1px solid root.$secondary;
+}
+
+// .attachment-container p::after {
+//   content: "";
+//   display: inline-block;
+
+//   width: 100%;
+//   vertical-align: middle;
+//   border-bottom: 2px root.$secondary solid;
+//   margin: 0 0 0 8px;
+// }

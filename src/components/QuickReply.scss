@@ -1,0 +1,58 @@
+@use "../index.scss" as root;
+
+.reply-container {
+  max-width: 724px;
+  margin: 4px 0 16px 0;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.reply-container form {
+  display: flex;
+}
+
+.reply-container input {
+  background-color: root.$white;
+
+  box-sizing: border-box;
+  flex: 2;
+  //   width: 100%;
+  height: 32px;
+  border: none;
+  border-radius: root.$default-radius 0 0 root.$default-radius;
+  padding: 8px 0 8px 8px;
+}
+
+.reply-container input:focus-visible {
+  outline: none;
+}
+
+.reply-container input::placeholder {
+  color: root.$primary;
+  font-size: 12px;
+}
+
+.quick-send-btn {
+  background-color: root.$accent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  user-select: none;
+
+  width: 50px;
+  height: 32px;
+  border-radius: 0 root.$default-radius root.$default-radius 0;
+}
+
+.quick-send-btn:hover {
+  cursor: pointer;
+}
+
+.quick-send-btn p {
+  color: root.$secondary;
+
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0;
+}
