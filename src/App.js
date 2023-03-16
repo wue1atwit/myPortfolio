@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.scss";
 import { FaSearch, FaPencilAlt } from "react-icons/fa";
-import EmailListItem from "./components/EmailListItem";
+import { EmailListItem, EmailMessage, Container } from "./components";
 
 const App = () => {
   return (
-    <>
+    <Container sy={{ backgroundColor: "#f5f5f5", maxWidth: "1056px" }}>
       <div className="email-container">
         <form className="search-container">
           <div style={{ position: "relative" }}>
@@ -28,7 +28,8 @@ const App = () => {
           <p style={{ fontWeight: 700 }}>Compose</p>
         </button>
       </div>
-    </>
+      {/* <EmailMessage></EmailMessage> */}
+    </Container>
   );
 };
 
