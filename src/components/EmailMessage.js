@@ -9,6 +9,7 @@ const EmailMessage = ({ messageDef }) => {
   const customStyle = {
     padding: "0 16px",
     flexDirection: "column",
+    alignItems: "center",
     gap: "4px",
     flex: 2,
     overflowY: "scroll",
@@ -100,7 +101,6 @@ const EmailMessage = ({ messageDef }) => {
           </div>
         </div>
       </div>
-
       <QuickReply></QuickReply>
     </Container>
   );
