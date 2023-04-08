@@ -4,6 +4,8 @@ import AttachmentItem from "./AttachmentItem";
 import Container from "./Container";
 import QuickReply from "./QuickReply";
 import Compose from "./Compose";
+import UserModal from "./UserModal";
+import ModalCard from "./ModalCard";
 
 export {
   EmailListItem,
@@ -12,4 +14,6 @@ export {
   Container,
   QuickReply,
   Compose,
+  UserModal,
+  ModalCard,
 };

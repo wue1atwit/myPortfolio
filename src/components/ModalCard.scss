@@ -1,0 +1,52 @@
+@use "../index.scss" as root;
+
+.card-container {
+  background-color: root.$white;
+
+  width: 403px;
+  height: 64px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: root.$default-radius;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-main {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.card-container .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  color: root.$primary;
+  font-size: 12px;
+}
+
+.card-info {
+  color: root.$accent;
+  font-size: 16px;
+}
+
+.hover-icon {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 250ms ease-in, visibility 0ms ease-in 250ms;
+}
+
+.card-container:hover {
+  cursor: pointer;
+}
+
+.card-container:hover .hover-icon {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms ease-in, visibility 0ms ease-in 0ms;
+}
