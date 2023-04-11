@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./Compose.scss";
 import { Container } from "./index";
 import { FaTimes, FaRegPaperPlane } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Compose = () => {
   const [composeMessage, setComposeMessage] = useState({});
   const [validatorStyle, setValidatorStyle] = useState({});
+  const navigate = useNavigate();
 
   const customStyle = {
     padding: "0 16px",
@@ -85,7 +87,7 @@ const Compose = () => {
           ></textarea>
           {/* <input type="submit" value="Submit" /> */}
           <div className="compose-footer">
-            <div className="close-btn">
+            <div className="close-btn" onClick={() => navigate(-1)}>
               <FaTimes className="icon"></FaTimes>
             </div>
             <div type="submit" className="send-btn" onClick={sendAction}>
