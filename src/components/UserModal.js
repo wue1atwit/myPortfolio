@@ -23,7 +23,7 @@ const CopyToast = ({ showToast }) => {
   );
 };
 
-const UserModal = () => {
+const UserModal = ({ showModal, setShowModal }) => {
   const [showToast, setShowToast] = useState(false);
 
   const popToast = () => {
@@ -32,9 +32,11 @@ const UserModal = () => {
   };
 
   return (
-    <Container className="modal-overlay">
+    <Container
+      className={showModal ? "modal-overlay show" : "modal-overlay hide"}
+    >
       <div className="modal-container">
-        <div className="close-btn">
+        <div className="close-btn" onClick={() => setShowModal(false)}>
           <FaTimes className="icon"></FaTimes>
         </div>
         <div className="modal-header">

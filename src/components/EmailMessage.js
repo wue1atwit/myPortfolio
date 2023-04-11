@@ -3,7 +3,7 @@ import "./EmailMessage.scss";
 import { Container, AttachmentItem, QuickReply } from "./index";
 import { FaPaperclip } from "react-icons/fa";
 
-const EmailMessage = ({ messageDef }) => {
+const EmailMessage = ({ messageDef, setShowModal }) => {
   let temp = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
   const customStyle = {
@@ -27,7 +27,10 @@ const EmailMessage = ({ messageDef }) => {
       <div className="message-container">
         <div>
           <div className="message-header">
-            <div className="placeholder-image">
+            <div
+              className="placeholder-image"
+              onClick={() => setShowModal(true)}
+            >
               <p className="E">E</p>
             </div>
             <div className="sender">

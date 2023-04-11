@@ -46,6 +46,10 @@
   gap: 16px;
 }
 
+.message-header .placeholder-image:hover {
+  cursor: pointer;
+}
+
 .sender > p {
   color: root.$primary;
   margin: 0;
