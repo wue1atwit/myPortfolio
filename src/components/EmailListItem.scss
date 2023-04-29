@@ -19,10 +19,20 @@
   color: root.$secondary;
 }
 
+.item-text-container {
+  width: 128px;
+}
+
 .item-text {
   color: root.$secondary;
   font-size: 12px;
   margin: 0;
+}
+
+.preview {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .placeholder-image {
