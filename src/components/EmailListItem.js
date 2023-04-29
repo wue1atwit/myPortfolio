@@ -1,6 +1,6 @@
 import React from "react";
 import "./EmailListItem.scss";
-import { FaPaperPlane, FaPaperclip } from "react-icons/fa";
+import { FaEnvelope, FaEnvelopeOpen, FaPaperclip } from "react-icons/fa";
 
 const EmailListItem = ({ subject, message, date }) => {
   return (
@@ -21,12 +21,8 @@ const EmailListItem = ({ subject, message, date }) => {
               color: "white",
             }}
           >
-            <a href="#">
-              <FaPaperclip className="icon"></FaPaperclip>
-            </a>
-            <a href="#">
-              <FaPaperPlane className="icon"></FaPaperPlane>
-            </a>
+            <FaEnvelope className="icon"></FaEnvelope>
+            <FaPaperclip className="icon"></FaPaperclip>
           </div>
         </div>
       </div>
