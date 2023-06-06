@@ -3,11 +3,14 @@ import { FaRegFilePdf } from "react-icons/fa";
 import "./AttachmentItem.scss";
 
 // TODO: Figure file type and size units
-const AttachmentItem = ({ name, size, type }) => {
+const AttachmentItem = ({ name, size, type, file }) => {
   const [unit, setUnit] = useState("kb");
 
   return (
-    <div className="attachment-item">
+    <div
+      className="attachment-item"
+      onClick={() => window.open(file, "_blank")}
+    >
       <FaRegFilePdf className="icon" />
       <div className="info">
         <p className="name">
