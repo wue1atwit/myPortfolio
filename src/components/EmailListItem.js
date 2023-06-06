@@ -2,7 +2,7 @@ import React from "react";
 import "./EmailListItem.scss";
 import { FaEnvelope, FaEnvelopeOpen, FaPaperclip } from "react-icons/fa";
 
-const EmailListItem = ({ subject, message, date }) => {
+const EmailListItem = ({ subject, message, date, hasAttachment }) => {
   return (
     <div className="email-item">
       <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
@@ -22,7 +22,7 @@ const EmailListItem = ({ subject, message, date }) => {
             }}
           >
             <FaEnvelope className="icon"></FaEnvelope>
-            <FaPaperclip className="icon"></FaPaperclip>
+            {hasAttachment && <FaPaperclip className="icon"></FaPaperclip>}
           </div>
         </div>
       </div>
