@@ -36,7 +36,10 @@ const EmailMessage = ({ messageDef, setShowModal }) => {
             <div className="sender">
               <p className="name">Ethan Wu</p>
               <p className="email">
-                To: <span>wp@ethanwu.net</span>
+                To:{" "}
+                <a href="#">
+                  <span>wp@ethanwu.net</span>
+                </a>
               </p>
             </div>
           </div>

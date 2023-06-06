@@ -63,6 +63,10 @@
   color: root.$accent;
 }
 
+.email a {
+  text-decoration: none;
+}
+
 .message-container .line {
   display: block;
   color: root.$secondary;
