@@ -6,6 +6,12 @@ import { EmailListItem, Container, UserModal } from "./components";
 import data from "./res/emailData";
 
 const App = ({ showModal, setShowModal }) => {
+  let convertDate = (date) => {
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+
+    return `${month}/${day}`;
+  };
   return (
     <Container sy={{ backgroundColor: "#f5f5f5", position: "relative" }}>
       <UserModal showModal={showModal} setShowModal={setShowModal}></UserModal>
@@ -18,11 +24,16 @@ const App = ({ showModal, setShowModal }) => {
         </form>
 
         {data.map((email) => (
-          <NavLink key={email.id} className="nav-link" to="/emails">
+          <NavLink
+            key={email.id}
+            className="nav-link"
+            to={`/emails/${email.id}`}
+          >
             <EmailListItem
               subject={email.subject}
               message={email.message}
-              date={email.sDate}
+              date={convertDate(email.date)}
+              hasAttachment={email.hasAttachment}
             />
           </NavLink>
         ))}
