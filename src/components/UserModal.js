@@ -45,7 +45,7 @@ const UserModal = ({ showModal, setShowModal }) => {
           </div>
           <div className="info">
             <p style={{ fontSize: "24px" }}>Ethan Wu</p>
-            <p style={{ fontSize: "16px" }}>wp@ethanwu.net</p>
+            <p style={{ fontSize: "16px" }}>no-reply@ethanwu.net</p>
           </div>
         </div>
         <span className="line"></span>
