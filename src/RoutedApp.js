@@ -3,7 +3,6 @@ import App from "./App";
 import { EmailMessage, Compose } from "./components";
 import { FaMailBulk } from "react-icons/fa";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import data from "./res/emailData";
 
 const RoutedApp = () => {
   const [showModal, setShowModal] = useState(false);
@@ -25,9 +24,7 @@ const RoutedApp = () => {
           ></Route>
           <Route
             path="emails/:emailID"
-            element={
-              <EmailMessage messageDef={data} setShowModal={setShowModal} />
-            }
+            element={<EmailMessage setShowModal={setShowModal} />}
           ></Route>
           <Route path="compose" element={<Compose />} />
         </Route>
