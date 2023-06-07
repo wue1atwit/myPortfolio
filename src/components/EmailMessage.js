@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./EmailMessage.scss";
+import axios from "axios";
 import { Container, AttachmentItem, QuickReply } from "./index";
 import { FaPaperclip } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 
-const EmailMessage = ({ messageDef, setShowModal }) => {
+const EmailMessage = ({ setShowModal }) => {
   const { emailID } = useParams();
-  let temp = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
+  const [email, setEmail] = useState({});
 
-  const email = messageDef.filter((mail) => mail.id == emailID)[0];
-  const msgArray = email.message.split("\n");
+  const getEmail = async () => {
+    const res = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URI}/emails/${emailID}`
+    );
+    setEmail(res.data.email);
+  };
+
+  useEffect(() => {
+    getEmail();
+  }, [emailID]);
+
+  const msgArray = !email.message ? [] : email.message.split("\n");
 
   const customStyle = {
     padding: "0 16px",
@@ -37,7 +48,7 @@ const EmailMessage = ({ messageDef, setShowModal }) => {
               <p className="email">
                 To:{" "}
                 <a href="#">
-                  <span>wp@ethanwu.net</span>
+                  <span>no-reply@ethanwu.net</span>
                 </a>
               </p>
             </div>
@@ -56,8 +67,8 @@ const EmailMessage = ({ messageDef, setShowModal }) => {
           <div className="attachment-container">
             <div className="attachment-header">
               <FaPaperclip></FaPaperclip>
-              <p>
-                2 attachment <span>Save all</span>
+              <p style={{ marginRight: "8px" }}>
+                2 attachment{/* 2 attachment <span>Save all</span> */}
               </p>
               <span className="line"></span>
             </div>
@@ -65,10 +76,11 @@ const EmailMessage = ({ messageDef, setShowModal }) => {
             <div className="item-list">
               {email.attachedFiles.map((a) => (
                 <AttachmentItem
+                  key={`${a.name}.${a.type}`}
                   name={a.name}
                   size={80}
                   type={a.type}
-                  key={`${a.name}.${a.type}`}
+                  file={a.file}
                 ></AttachmentItem>
               ))}
             </div>

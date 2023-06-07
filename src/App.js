@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
+import axios from "axios";
 import { FaSearch, FaPencilAlt } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import { EmailListItem, Container, UserModal } from "./components";
-import data from "./res/emailData";
 
 const App = ({ showModal, setShowModal }) => {
+  const [data, setData] = useState([]);
+
   let convertDate = (date) => {
     let day = date.getDate();
     let month = date.getMonth() + 1;
 
     return `${month}/${day}`;
   };
+
+  const getEmails = async () => {
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/emails`);
+    setData(res.data.emails);
+  };
+
+  useEffect(() => {
+    getEmails();
+  }, []);
+
   return (
     <Container sy={{ backgroundColor: "#f5f5f5", position: "relative" }}>
       <UserModal showModal={showModal} setShowModal={setShowModal}></UserModal>
@@ -25,14 +37,14 @@ const App = ({ showModal, setShowModal }) => {
 
         {data.map((email) => (
           <NavLink
-            key={email.id}
+            key={email._id}
             className="nav-link"
-            to={`/emails/${email.id}`}
+            to={`/emails/${email._id}`}
           >
             <EmailListItem
               subject={email.subject}
               message={email.message}
-              date={convertDate(email.date)}
+              date={convertDate(new Date(email.date))}
               hasAttachment={email.hasAttachment}
             />
           </NavLink>
