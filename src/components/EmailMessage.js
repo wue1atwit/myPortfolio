@@ -11,7 +11,7 @@ const EmailMessage = ({ setShowModal }) => {
 
   const getEmail = async () => {
     const res = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URI}/emails/${emailID}`
+      `${process.env.REACT_APP_BACKEND_URI}/api/v1/emails/${emailID}`
     );
     setEmail(res.data.email);
   };
@@ -68,7 +68,10 @@ const EmailMessage = ({ setShowModal }) => {
             <div className="attachment-header">
               <FaPaperclip></FaPaperclip>
               <p style={{ marginRight: "8px" }}>
-                2 attachment{/* 2 attachment <span>Save all</span> */}
+                {`${email.attachedFiles.length} ${
+                  email.attachedFiles.length > 1 ? "attachments" : "attachment"
+                }`}
+                {/* 2 attachment <span>Save all</span> */}
               </p>
               <span className="line"></span>
             </div>
@@ -78,7 +81,7 @@ const EmailMessage = ({ setShowModal }) => {
                 <AttachmentItem
                   key={`${a.name}.${a.type}`}
                   name={a.name}
-                  size={80}
+                  size={a.size}
                   type={a.type}
                   file={a.file}
                 ></AttachmentItem>

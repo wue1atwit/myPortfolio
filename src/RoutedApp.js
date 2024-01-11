@@ -32,7 +32,7 @@ const RoutedApp = () => {
             element={
               <div className="no-mail-selected">
                 <FaMailBulk className="icon"></FaMailBulk>
-                <p>Select an item to reads</p>
+                <p>Select an item to read</p>
               </div>
             }
           ></Route>

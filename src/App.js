@@ -4,10 +4,15 @@ import axios from "axios";
 import { FaSearch, FaPencilAlt } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import { EmailListItem, Container, UserModal } from "./components";
+import moment from "moment";
 
 const App = ({ showModal, setShowModal }) => {
   const [data, setData] = useState([]);
 
+  /**
+   * @Deprecated - Date conversion will be tasked
+   * to Moment.js module
+   */
   let convertDate = (date) => {
     let day = date.getDate();
     let month = date.getMonth() + 1;
@@ -16,8 +21,14 @@ const App = ({ showModal, setShowModal }) => {
   };
 
   const getEmails = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/emails`);
-    setData(res.data.emails);
+    const res = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URI}/api/v1/emails`
+    );
+    setData(
+      res.data.emails.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      })
+    );
   };
 
   useEffect(() => {
@@ -44,7 +55,7 @@ const App = ({ showModal, setShowModal }) => {
             <EmailListItem
               subject={email.subject}
               message={email.message}
-              date={convertDate(new Date(email.date))}
+              date={moment(email.date).format("h:mm A")}
               hasAttachment={email.hasAttachment}
             />
           </NavLink>
